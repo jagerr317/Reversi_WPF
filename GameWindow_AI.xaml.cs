@@ -47,7 +47,12 @@ namespace Reversi
 
         }
 
-         void timer_Tick_W(object sender, EventArgs e)
+        /// <summary>
+        /// Calculate the ellapsed time for black and white player.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void timer_Tick_W(object sender, EventArgs e)
         {
             TimeSpan ts = sw_W.Elapsed;
             currentTime = String.Format("{0:00}:{1:00}:{2:00}",
@@ -62,7 +67,12 @@ namespace Reversi
             timer_B.Text = currentTime;
         }
 
-
+        /// <summary>
+        /// Handles the interaction with the matrix cells.
+        /// Starts and stops the current player's stopwatch.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CellClicker(object sender, RoutedEventArgs e)
         {
 
@@ -81,6 +91,11 @@ namespace Reversi
                 updateBoard();
             }
         }
+
+
+        /// <summary>
+        /// Updates the UI from the current board.matrix and fills the cells with ellipses (White or Black).
+        /// </summary>
         private void updateBoard()
         {
             grid.Children.Clear();
@@ -147,24 +162,6 @@ namespace Reversi
             return a ? Colors.Black : Colors.White;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 
 }
-
-//private void Disk_IsMouseDirectlyOverChanged(object sender, DependencyPropertyChangedEventArgs e)
-//{
-//    Ellipse sent = (Ellipse)sender;
-//    //var isItHovered = Boolean.parseBoolean();
-//    if (e.NewValue.Equals(true))
-//    {
-//        sent.Stroke = System.Windows.Media.Brushes.DarkSlateGray;
-//    }
-//    else
-//    {
-//        sent.Stroke = System.Windows.Media.Brushes.Transparent;
-//    }
-//}

@@ -10,6 +10,7 @@ namespace Reversi
     {
         RuleEngine ruleBook;
         Board board;
+        Random random = new Random();
         
         public bool blackTurn = true;
         public int blackScore;
@@ -19,6 +20,7 @@ namespace Reversi
         {
             ruleBook = new RuleEngine();
             board = new Board();
+            if ((random.Next(1, 2) / 2) == 0) blackTurn = !blackTurn;
         }
 
         public bool hasPossibleMove(bool black)
@@ -41,7 +43,7 @@ namespace Reversi
 
             bestscore_AI = calcScore_AI(board)[1];            
 
-            Tile tile = new Tile(false);
+            Tile tile = new Tile(blackTurn);
 
             List<int[]> possibleMoves = ruleBook.PossibleMoves(board, tile);
 
@@ -87,7 +89,8 @@ namespace Reversi
                 AI_board = null;
             }
 
-            PlaceTile(bestmove_AI[0], bestmove_AI[1]);    
+            if (PlaceTile(bestmove_AI[0], bestmove_AI[1])) { }
+            else Console.Error.WriteLine("nem léptem");
         }
 
         public bool PlaceTile(int x, int y)

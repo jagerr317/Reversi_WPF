@@ -35,6 +35,9 @@ namespace Reversi
         {
             InitializeComponent();
             updateBoard();
+            if (gameEngine.blackTurn == false)
+                gameEngine.AI_move();
+            updateBoard();
             text_black.Text = "Black Ellapsed time";
             text_white.Text = "White Ellapsed time";
             tB.Interval = TimeSpan.FromMilliseconds(1);
@@ -75,7 +78,6 @@ namespace Reversi
         /// <param name="e"></param>
         private void CellClicker(object sender, RoutedEventArgs e)
         {
-
             Button button = (Button)sender;
             int row = Grid.GetRow(button);
             int col = Grid.GetColumn(button);

@@ -16,8 +16,6 @@ C:\Users\jager\source\repos\Reversi\obj\Debug\Reversi.csproj.GenerateResource.ca
 C:\Users\jager\source\repos\Reversi\obj\Debug\Reversi.exe
 C:\Users\jager\source\repos\Reversi\obj\Debug\Reversi.pdb
 C:\Users\jager\source\repos\Reversi\obj\Debug\Reversi.csprojAssemblyReference.cache
-C:\Users\jager\source\repos\Reversi\obj\Debug\GameWindow_AI.g.cs
-C:\Users\jager\source\repos\Reversi\obj\Debug\GameWindow_AI.baml
 C:\Users\jager\source\repos\Reversi\bin\Debug\LeaderBoardDB.db
 C:\Users\jager\source\repos\Reversi\bin\Debug\Dapper.dll
 C:\Users\jager\source\repos\Reversi\bin\Debug\System.Data.SQLite.dll
